@@ -35,6 +35,19 @@
     .then(res => console.log(res.json()))
     .then(res => console.log(JSON.stringify(res)))
     .catch(error => console.error('Error:', error));
+
+
+
+    fetch(myRequest).then(function(response) {
+        var contentType = response.headers.get('content-type');
+        if(contentType && contentType.includes('application/json')) {
+          return response.json();
+        }
+        throw new TypeError("Oops, we haven't got JSON!");
+      })
+      .then(function(json) { // process your JSON further  })
+      .catch(function(error) { console.log(error); });
+
 */
 
     let data = {"codeGrpId": "LEVEL_CD"};
@@ -77,16 +90,69 @@
 
         fetch('http://localhost:8090/api/cmm/fileUpload.do', {
             method: 'POST',
-            body: formData
+            body: formData,
         })
         .then(response => response.json())
         .catch(error => console.error('Error:', error))
         .then(response => console.log('Success:', JSON.stringify(response)));
     };
 
+     function fileDownload(){
+         fetch('flowers.jpg')
+         .then(response => {
+             if (!response.ok) {
+                 throw new Error('Network response was not ok');
+             }
+             return response.blob();
+         })
+         .then(myBlob => {
+             myImage.src = URL.createObjectURL(myBlob);
+         })
+         .catch(error => {
+             console.error('There has been a problem with your fetch operation:', error);
+         });
+
+         const myHeaders = new Headers();
+         const myRequest = new Request('flowers.jpg', {
+             method: 'GET',
+             headers: myHeaders,
+             mode: 'cors',
+             cache: 'default',
+         });
+         fetch(myRequest)
+         .then(response => response.blob())
+         .then(myBlob => {
+             myImage.src = URL.createObjectURL(myBlob);
+         });
+     }
 //getCodeList();
 
+    function headerCheck() {
+        var myHeaders = new Headers({
+            "Content-Type": "text/plain",
+            "Content-Length": content.length.toString(),
+            "X-Custom-Header": "ProcessThisImmediately",
+        });
 
+        console.log(myHeaders.has("Content-Type")); // true
+        console.log(myHeaders.has("Set-Cookie")); // false
+        myHeaders.set("Content-Type", "text/html");
+        myHeaders.append("X-Custom-Header", "AnotherValue");
+
+        console.log(myHeaders.get("Content-Length")); // 11
+        console.log(myHeaders.getAll("X-Custom-Header")); // ["ProcessThisImmediately", "AnotherValue"]
+
+        myHeaders.delete("X-Custom-Header");
+        console.log(myHeaders.getAll("X-Custom-Header")); // [ ]
+
+
+        var myResponse = Response.error();
+        try {
+            myResponse.headers.set("Origin", "http://mybank.com");
+        } catch(e) {
+            console.log("은행이 아니잖아요!!");
+        }
+    }
 </script>
 </body>
 </html>
