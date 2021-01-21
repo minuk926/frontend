@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        파일업로드<input type="file" multiple>
+        <!--파일업로드<input type="file">-->
+        <input type="button" value="파일 업로드" onclick="fileUpload()">
+    </div>
+
+<script>
+/*
+    fetch('https:/www.naver.com', {
+        method: 'GET',                  // *GET, POST, PUT, DELETE, etc.
+        mode: 'no-cors',                   // no-cors, cors, *same-origin
+        cache: 'no-cache',              // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin',     // include, *same-origin, omit : same-origin - 요청하려는 URL이 호출 스크립트와 동일한 origin을 가지고 있을때만 자격증명을 전송
+                                        //                               include - 자격 증명이 포함된 인증서 전송
+                                        //                               omit - 브라우저의 보안을 유지하는것 대신 자격증명을 포함하지 않는것
+        headers:{
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'no-referrer', // no-referrer, *client
+        //body: JSON.stringify(data), // body data type must match "Content-Type" header
+    })
+    .then(res => console.log(res.json()))
+    .then(res => console.log(JSON.stringify(res)))
+    .catch(error => console.error('Error:', error));
+*/
+
+    let data = {"codeGrpId": "LEVEL_CD"};
+
+     async function getCodeList() {
+     let result = await fetch('http://localhost:8090/api/cmm/getSelectBoxComboCodeList.do', {
+            method: 'POST',                  // *GET, POST, PUT, DELETE, etc.
+            //mode: 'no-cors',                   // no-cors, cors, *same-origin
+            //cache: 'no-cache',              // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: 'same-origin',     // include, *same-origin, omit : same-origin - 요청하려는 URL이 호출 스크립트와 동일한 origin을 가지고 있을때만 자격증명을 전송
+                                            //                               include - 자격 증명이 포함된 인증서 전송
+                                            //                               omit - 브라우저의 보안을 유지하는것 대신 자격증명을 포함하지 않는것
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data), // body data type must match "Content-Type" header
+        })
+        .then(res=>res.json())
+        .then(function (res) {
+            return res;
+        })
+        .catch(function (error) {
+            return error;
+        });
+     console.log(result);
+     console.log(JSON.stringify(result));
+    }
+
+    function fileUpload(){
+        var formData = new FormData();
+        var photos = document.querySelector('input[type="file"][multiple]');
+        //var photos = document.querySelector('input[type="file"]');
+
+        formData.append('title', 'My Vegas Vacation');
+        for (var i = 0; i < photos.files.length; i++) {
+            formData.append('files', photos.files[i]);
+            console.log(photos.files[i]);
+        }
+        console.log(formData);
+
+        fetch('http://localhost:8090/api/cmm/fileUpload.do', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', JSON.stringify(response)));
+    };
+
+//getCodeList();
+
+
+</script>
+</body>
+</html>
