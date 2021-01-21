@@ -1,7 +1,7 @@
 # frontend
 
 ### 미정의 값 체크 
-  + !!null, !!undefinded, !!NaN, !!'', !!0  : false
+  + null, undefinded, NaN, '', 0  : false
   + {}, [] : true
   + 실행블록 참 : if(!xx)  
   + 실행블록 거짓 : if(!!xx)
