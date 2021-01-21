@@ -2,7 +2,8 @@
 
 ### 미정의 값 체크 
   + !!null, !!undefinded, !!NaN, !!'', !!0  : false
-  + 참 : if(!xx)  or 거짓 : if(!!xx)
+  + 참 : if(!xx)  
+  + 거짓 : if(!!xx)
   + xx || 'default'
 ### ES6 추가
   + template string
