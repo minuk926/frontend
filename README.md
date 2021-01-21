@@ -7,6 +7,7 @@
   + 실행블록 거짓 : if(!!xx)
   + 미존재 초기화 : xx || 'default'
     + 앞이 거짓인 경우 실행 : xx || 실행문
+    + 앞이 참인 경우 실행 : xx && 실행문
 ### ES6 추가
   + template string
     + ss + ' Lee' === \`${ss} Lee\`
