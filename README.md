@@ -50,6 +50,16 @@
             console.log(`${result} ms 후 완료`);
         } catch (error) {
             console.error(`에러발생 :: ${error}`);
+        } finally {
         }
     })();
     
+    async function aa(){ 
+        try{
+          const results = Promise.all([p1(), p2(), p3()]);
+          const result = Promise.race([p1(), p2(), p3()]);
+        }catch(error){
+        } finally {
+        }
+    };    
+   
