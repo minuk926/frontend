@@ -63,26 +63,26 @@
         }
     };    
 ### Deep Copy : 배열([]) 도 동일
-   // 1 Depth
-   let a = { name:"name1", value:"value1"};  // []
-   // 1. slice
-   let aa = a.slice();
-   // 2. spread operation
-   let aaa = {...a}
-   // 3. assign
-   Object.assign(aaa, a);    // 병합
-   // 4. forEach
-   let obj = {};
-   Object.keys(a).forEach(function(key){
-       obj[key] = obj[key];
-   });
+    // 1 Depth
+    let a = { name:"name1", value:"value1"};  // []
+    // 1. slice
+    let aa = a.slice();
+    // 2. spread operation
+    let aaa = {...a}
+    // 3. assign
+    Object.assign(aaa, a);    // 병합
+    // 4. forEach
+    let obj = {};
+    Object.keys(a).forEach(function(key){
+        obj[key] = obj[key];
+    });
    
-   // 1 Depth over
-   let a = {
-       kk : {
-         name: 'kkk';
-       };
-       ss : 'dhhd"
-   };
-   let scp = JSON.parse(JSON.stringify(a));
+    // 1 Depth over
+    let a = {
+        kk : {
+            name: 'kkk';
+        };
+        ss : 'dhhd"
+    };
+    let scp = JSON.parse(JSON.stringify(a));
    
