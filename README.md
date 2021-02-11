@@ -8,6 +8,12 @@
     + - 형제 인접 1개 : ul + ol
     ~ - 형제 : ul ~ ol
     space - 자손 : ul li
+    :hover - mouse over : a:hover
+    :active - mouse click : a:active
+    :focus - 대화형콘텐츠만 : input:focus
+    :first-child, last-child : .fruits li:first-child, li:last-child
+    :nth-child(n) - n번째 선택 : .fruits li:nth-child(2)
+    :nth-child(2n), nth-child(n+3) - 2*n2번째, 3+n 부터~ : .fruits li:nth-child(2n), li:nth-child(n+3)
 ### 미정의 값 체크 
   + null, undefinded, NaN, '', 0  : false
   + {}, [] : true
