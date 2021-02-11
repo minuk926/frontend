@@ -1,5 +1,13 @@
 # frontend
 
+### CSS 초기화
+  + 초기화 참조 : https://www.jsdelivr.com/package/npm/reset-css
+  + <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+### css Selector
+  + > - 자식 : ul > li
+  + + - 형제 인접 1개 : ul + ol
+  + ~ - 형제 : ul ~ ol
+  + space - 자손 : ul li
 ### 미정의 값 체크 
   + null, undefinded, NaN, '', 0  : false
   + {}, [] : true
