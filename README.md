@@ -84,7 +84,7 @@
     
 ### ES11(2020)  
 
-    + Optional chaining
+    * Optional chaining
         + console.log(person.job?.manager?.name);
             const person1 = {
               name: 'Ellie',
@@ -106,7 +106,7 @@
               printManager(person1);
               printManager(person2);    // error
 
-    + Nullish coalescing operator
+    * Nullish coalescing operator
         + const userName = name ?? 'Guest';
         const name = '';
         const num = 0;
