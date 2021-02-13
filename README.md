@@ -35,43 +35,83 @@
     * Symbol('Mark') !== Symbol('Mark')   
     * String('Mark') === String('Mark')
     * Shorthand property names  
-    const elle3 = {
-      name,    // name: neam
-      age      // age: age
-    };
-    const name = 'elle1';
-    const age = '20';
-    const elli2 = {
-      name: name,
-      age: age
-    };
+        + const elle3 = {
+          name,    // name: neam
+          age      // age: age
+        };
+        const name = 'elle1';
+        const age = '20';
+        const elli2 = {
+          name: name,
+          age: age
+        };
 
-    + Destructing Assigment  
-    + const { name, level } = student;
-      + const {name: studentName, level: studentLevel} = student;  // studentName과 studentLevel로 할당
-    const student = {
-      name: 'Anna',
-      level: 1
-    };
-    const name = student.name;
-    const level = student.level;
-    + const [first, second] = animals;
-    const animals = ['tiger','dog'];
-    const first = animals[0];
-    const second = animals[1];
-    + Spread suntax
+    * Destructing Assigment  
+        + const { name, level } = student;
+        + const {name: studentName, level: studentLevel} = student;  // studentName과 studentLevel로 할당
+            const student = {
+              name: 'Anna',
+              level: 1
+            };
+            const name = student.name;
+            const level = student.level;
+        + const [first, second] = animals;
+            const animals = ['tiger','dog'];
+            const first = animals[0];
+            const second = animals[1];
+    * Spread sintax : deep copy 아님에 주의 - call by refference
+        + const fruits = [...fruits1, ...fruits2];
+        + const dog = {...dog1, ...dog2};
+            {
+              const obj1 = {key: 'key1'};
+              const obj2 = {key: 'key2'};
+              const array = [obj1, obj2];
+            }  
+            const arrayCopy = [...array];
+            const arrayCopy2 = [...array, {key: 'key3'}];
+            const dog1 = {key: 'dog'};
+            const dog2 = {key1: 'tiger', key:'cat'};
+            con dog3 = {...dog1, ...dog2};    //동일한 key는 override 됨
   
-    + Default parameters
-  
-    + Ternary Operrator
-  
-    + Template Literals
+    * Default parameters
+        + function printMsg(message = 'default messge'){};
+        
+    * Ternary Operrator
+        + const component = isCat ? 'cat': 'dog';
+        
+    * Template Literals
+        + `Today weather is ${weather} and temparature is ${temparature}.`
     
 ### ES11(2020)  
 
     + Optional chaining
+        + console.log(person.job?.manager?.name);
+            const person1 = {
+              name: 'Ellie',
+              job: {
+                title: 'S/W Engineer',
+                manager: {
+                  name: 'Bob'
+                }
+              }
+            };
+            const person2 = {
+              name: 'Bob'
+            }
+            
+            {
+              function printManager(person){
+                console.log(persion.job.manager.name);
+              }
+              printManager(person1);
+              printManager(person2);    // error
 
     + Nullish coalescing operator
+        + const userName = name ?? 'Guest';
+        const name = '';
+        const num = 0;
+        const userName = name ?? 'Guest';       // name || 'Guest' --> 'Guest'
+        const message = num ?? 'undefined';     // num || 'undefined' --> 'undefined'
     
 ### Promise
 
