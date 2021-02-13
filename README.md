@@ -3,17 +3,21 @@
 ### CSS 초기화
     초기화 참조 : https://www.jsdelivr.com/package/npm/reset-css
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
-### css Selector
+### css Basic Selector
     > - 자식 : ul > li
     + - 형제 인접 1개 : ul + ol
     ~ - 형제 : ul ~ ol
     space - 자손 : ul li
-    :hover - mouse over : a:hover
-    :active - mouse click : a:active
-    :focus - 대화형콘텐츠만 : input:focus
-    :first-child, last-child : .fruits li:first-child, li:last-child
+### css Pseudo-Elements Selector    
+    E:hover - mouse over : a:hover
+    E:active - mouse click : a:active
+    E:focus - 대화형콘텐츠만 : input:focus
+    :first-child, last-child : .fruits li:first-child, li:last-child   :first-child, :last-child
     :nth-child(n) - n번째 선택 : .fruits li:nth-child(2)
     :nth-child(2n), nth-child(n+3) - 2*n2번째, 3+n 부터~ : .fruits li:nth-child(2n), li:nth-child(n+3)
+    E:nth-of-type(n) - 동일 E(태그) 형제중 n번째 : .fruits p:nth-of-type(1)
+    E:not(S) - E태그중 S(selector)만 제외 : .fruits li:not(.red)
+    E::before, ::after - E요소 앞 또는 뒤에 content 삽입(content 속성 필수) : ul li::before{ content: "prefix"; font-weight: bold; color: red;}
 ### 미정의 값 체크 
   + null, undefinded, NaN, '', 0  : false
   + {}, [] : true
@@ -22,12 +26,48 @@
   + 미존재 초기화 : xx || 'default'
     + 앞이 거짓인 경우 실행 : xx || 실행문
     + 앞이 참인 경우 실행 : xx && 실행문
-### ES6 추가
+### ~ ES6 추가( ~ 2015)
   + template string
     + ss + ' Lee' === \`${ss} Lee\`
   + Symbol : 유니크한 값 생성  
     + Symbol('Mark') !== Symbol('Mark')   
     + String('Mark') === String('Mark')
+  + Shorthand property names  
+    const elle3 = {
+      name,    // name: neam
+      age      // age: age
+    };
+    const name = 'elle1';
+    const age = '20';
+    const elli2 = {
+      name: name,
+      age: age
+    };
+
+  + Destructing Assigment  
+    + const { name, level } = student;
+      + const {name: studentName, level: studentLevel} = student;  // studentName과 studentLevel로 할당
+    const student = {
+      name: 'Anna',
+      level: 1
+    };
+    const name = student.name;
+    const level = student.level;
+  + const [first, second] = animals;
+    const animals = ['tiger','dog'];
+    const first = animals[0];
+    const second = animals[1];
+  + Spread suntax
+  
+  + Default parameters
+  
+  + Ternary Operrator
+  
+  + Template Literals
+### ES11(2020)    
+  + Optional chaining
+
+  + Nullish coalescing operator
 ### Promise
     function p() {
         return new Promise(/* exceutor*/(resolve, reject) => {
