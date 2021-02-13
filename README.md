@@ -26,13 +26,15 @@
   + 미존재 초기화 : xx || 'default'
     + 앞이 거짓인 경우 실행 : xx || 실행문
     + 앞이 참인 경우 실행 : xx && 실행문
-### ~ ES6 추가( ~ 2015)
-  + template string
-    + ss + ' Lee' === \`${ss} Lee\`
-  + Symbol : 유니크한 값 생성  
-    + Symbol('Mark') !== Symbol('Mark')   
-    + String('Mark') === String('Mark')
-  + Shorthand property names  
+    
+### ES6 추가( ~ 2015)
+
+    * template string
+      ss + ' Lee' === \`${ss} Lee\`
+    * Symbol : 유니크한 값 생성  
+    * Symbol('Mark') !== Symbol('Mark')   
+    * String('Mark') === String('Mark')
+    * Shorthand property names  
     const elle3 = {
       name,    // name: neam
       age      // age: age
@@ -44,7 +46,7 @@
       age: age
     };
 
-  + Destructing Assigment  
+    + Destructing Assigment  
     + const { name, level } = student;
       + const {name: studentName, level: studentLevel} = student;  // studentName과 studentLevel로 할당
     const student = {
@@ -53,22 +55,26 @@
     };
     const name = student.name;
     const level = student.level;
-  + const [first, second] = animals;
+    + const [first, second] = animals;
     const animals = ['tiger','dog'];
     const first = animals[0];
     const second = animals[1];
-  + Spread suntax
+    + Spread suntax
   
-  + Default parameters
+    + Default parameters
   
-  + Ternary Operrator
+    + Ternary Operrator
   
-  + Template Literals
-### ES11(2020)    
-  + Optional chaining
+    + Template Literals
+    
+### ES11(2020)  
 
-  + Nullish coalescing operator
+    + Optional chaining
+
+    + Nullish coalescing operator
+    
 ### Promise
+
     function p() {
         return new Promise(/* exceutor*/(resolve, reject) => {
             setTimeout(() => {
@@ -88,7 +94,9 @@
     Promise.reject(/*value*/).catch()...
     Promise.all([Promise Object]).then()...
     Promise.race([Promise Object]).then()...
+    
 ### async - await
+
     // async가 추가된 메소드는 Promise.resolve() 형태로 return
     async function pp(ms) {
         return setTimeout(() => {
@@ -116,7 +124,9 @@
         } finally {
         }
     };    
+    
 ### Deep Copy : 배열([]) 도 동일
+
     // 1 Depth
     let a = { name:"name1", value:"value1"};  // []
     // 1. slice
