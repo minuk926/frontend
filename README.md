@@ -61,7 +61,7 @@
               height: 100vh / 75vh ...,        50vmin
             }
             
-### 미정의 값 체크 
+### 미정의 값 체크 : Nullish coalescing operator - ??
     + null, undefinded, NaN, '', 0  : false
     + {}, [] : true
     + 실행블록 참 : if(!xx)  
