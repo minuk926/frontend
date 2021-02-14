@@ -3,12 +3,16 @@
 ### CSS 초기화
     초기화 참조 : https://www.jsdelivr.com/package/npm/reset-css
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    
 ### css Basic Selector
+
     > - 자식 : ul > li
     + - 형제 인접 1개 : ul + ol
     ~ - 형제 : ul ~ ol
     space - 자손 : ul li
-### css Pseudo-Elements Selector    
+    
+### css Pseudo-Elements Selector  
+
     E:hover - mouse over : a:hover
     E:active - mouse click : a:active
     E:focus - 대화형콘텐츠만 : input:focus
@@ -18,14 +22,33 @@
     E:nth-of-type(n) - 동일 E(태그) 형제중 n번째 : .fruits p:nth-of-type(1)
     E:not(S) - E태그중 S(selector)만 제외 : .fruits li:not(.red)
     E::before, ::after - E요소 앞 또는 뒤에 content 삽입(content 속성 필수) : ul li::before{ content: "prefix"; font-weight: bold; color: red;}
+    
+### Attribute Selector
+
+    [attr], [attr=value] : [class], [disabled], [type=password] or [type="password"]
+    [attr^=value], [sttr$=value] : [class^="btn-"] or [class^=btn-], [class$=success]
+    
+### Inheritance : 문자를 다루는 속성이 대체로 상속
+
+    font - font-size, font-weight, font-style, line-height, font-family
+    color, text-align, text-indent, text-decoration, letter-spacing, opacity
+    강제 상속 : inherit
+    
+### Style 우선 순위 : !important > 인라인 style > 아이디 > 클래스[:] > 태그[::]
+
+    1. 명시도 : 점수가 높은 선언 우선 - !important > 인라인 style > 아이디 선택자 > 클래스(:) 선택자 > 태그(::) 선택자 > 전체선택자 > 상속
+    2. 선언순서 : 점수가 같은 경우 마지막 선언 override
+    3. 중요도 : 상속 보다 우선 - override
+    4. !important 적용 최우선
+    
 ### 미정의 값 체크 
-  + null, undefinded, NaN, '', 0  : false
-  + {}, [] : true
-  + 실행블록 참 : if(!xx)  
-  + 실행블록 거짓 : if(!!xx)
-  + 미존재 초기화 : xx || 'default'
-    + 앞이 거짓인 경우 실행 : xx || 실행문
-    + 앞이 참인 경우 실행 : xx && 실행문
+    + null, undefinded, NaN, '', 0  : false
+    + {}, [] : true
+    + 실행블록 참 : if(!xx)  
+    + 실행블록 거짓 : if(!!xx)
+    + 미존재 초기화 : xx || 'default'
+      + 앞이 거짓인 경우 실행 : xx || 실행문
+      + 앞이 참인 경우 실행 : xx && 실행문
     
 ### ES6 추가( ~ 2015)
 
