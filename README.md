@@ -40,7 +40,27 @@
     2. 선언순서 : 점수가 같은 경우 마지막 선언 override
     3. 중요도 : 상속 보다 우선 - override
     4. !important 적용 최우선
-    
+
+### CSS / 단위
+    * em : font-size 해당 폰트의 대문자 M기준
+        .container{
+          width: 600px;      /* 60em 과 동일 : 폰트크기가 10px이므로 */
+          font-size: 10px;   /* font-size: 2em : 본래 폰트 크기의 2배 */ 
+        }  
+    * rem : root의 r을 의미, 즉 html에 지정된 요소에 영향만을 받음
+        html{ font-size: 10px; }
+        --> .child{
+              font-size: 2em;
+              width: 20rem;    /* html의 폰트 크기 * rem =  10 * 20 의 크기 */
+            }
+    * 뷰포트 기준 단위 : % 단위 - vw / vh / vmin / vmax
+        + vw / vh : 현재 화면의 가로 / 세로의 비율 적용
+        + vmax / vmin : 현재의 가로/세로 크기중 큰/작은 쪽의 크기에대한 비율로 적용  
+            .container{
+              width: 100vw  / 50vw / 25vw ..., 50vmax
+              height: 100vh / 75vh ...,        50vmin
+            }
+            
 ### 미정의 값 체크 
     + null, undefinded, NaN, '', 0  : false
     + {}, [] : true
