@@ -60,7 +60,29 @@
               width: 100vw  / 50vw / 25vw ..., 50vmax
               height: 100vh / 75vh ...,        50vmin
             }
-            
+
+### CSS 중요 속성
+
+    + box-sizing : border-box - padding + border 포함 크기 계산
+                  content-box : width / height 만으로 크기 계산
+    + display : block, inline, 
+                inline-block(인라인블럭 input...) : width, height, margin, padding 등 block 요소 설정 가능
+                none(요소 숨김)
+                table, table-cell, flex...              
+    + overflow : 자식요소의 넘친 부분의 표시에 따라 visible / hidden / scroll(강제 생성) / auto(필요시 생성)
+    + opacity : 투명도 0 ~ 1
+    + font : font-style - 기울기  font-weight - 두께  font-size - 크기(default 16px) / line-height - 줄높이(줄간격)  font-family - 서체
+             font: italic bold 20px / 1.5 "Arial", sans-serif;   font size와 font family 필수
+                   20px / 1.5 sans-serif;     bold 20px sans-serif;    italic 20px / 1.5 sans-serif
+             + font-style : bold / italic / oblique
+             + font-weight : nomal(400) / bold(700) / bolder(부모요소보다 두껍게) / lighter(부모요소보다 얇게) / 100 ~ 900 100단위
+                         Thin-100, Extra Light-200, Light-300, Normal-400, Medium-500, Semi Bold-600, Bold-700, Extra Bold-800, Black(Heavy)-900
+             + line-height : 숫자로 지정하면 배수 1.4 ~ 1.7이 적당  px로 지정하면 글꼴 크기 변경시 재지정 필요 
+             + text-align : left / right / center / justify(양쪽 맞춤)
+             + text-decoration(line 설정) : none / underline / overline / line-through(중앙선)
+             + text-indent : 첫번째줄의 들여 쓰기  백그라운드이미지 사용시 이미지위에 텍스트를 밀어낼 경우 text-indent: -9999px;로 정의
+             + letter-spacing(자간), word-spacing(단어간)
+             
 ### 미정의 값 체크 : Nullish coalescing operator - ??
     + null, undefinded, NaN, '', 0  : false
     + {}, [] : true
