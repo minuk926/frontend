@@ -124,6 +124,7 @@
             const animals = ['tiger','dog'];
             const first = animals[0];
             const second = animals[1];
+            
     * Spread sintax : deep copy 아님에 주의 - call by refference
         + const fruits = [...fruits1, ...fruits2];
         + const dog = {...dog1, ...dog2};
