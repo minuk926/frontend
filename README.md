@@ -234,13 +234,13 @@
 
     // 1 Depth
     let a = { name:"name1", value:"value1"};  // []
-    // 1. slice
+    // 1. slice - Deep copy
     let aa = a.slice();
     // 2. spread operation
     let aaa = {...a}
-    // 3. assign
+    // 3. assign - Deep copy
     Object.assign(aaa, a);    // 병합
-    // 4. forEach
+    // 4. forEach - - Deep copy
     let obj = {};
     Object.keys(a).forEach(function(key){
         obj[key] = obj[key];
