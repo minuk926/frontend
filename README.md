@@ -102,7 +102,8 @@ color, text-align, text-indent, text-decoration, letter-spacing, opacity
       .child{
         float: left;
       }           
-### position : static / relative - 자신 / absolute - 부모 / fixed - 뷰포트 / sticky - scroll 영역 - absolute 사용 권장
+### position : static / relative - 자신 / absolute - 부모 / fixed - 뷰포트 / sticky - scroll 영역 
+               absolute 권장
                diaplay 가 block으로 변경(absolute/fixed인 경우)
                top / left / right / bottom 함께 사용
     absolute : position(static제외)이 지정된 부모요소 기준으로 배치 - relative 권장)
@@ -133,7 +134,24 @@ color, text-align, text-indent, text-decoration, letter-spacing, opacity
                 skew(x-deg, y-deg)  skewX(x-deg)  skewY(y-deg)  
                 perspective(n) - 원근법(거리)
                 matrix(n,n,n,n,n,n)
+                transform-origin, transform-style, perspective, perspective-origin, backface-visibility
+### animation : animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count
+                animation-direction, animation-fill-mode, animation-play-state
+### columns : auto, column-width, column-count
+              columns: 너비 개수        
+              column-gap: 너비;
+              column-rule: 두께 종류 색상;
+              p {
+                columns: 150px 3;
+                column-gap: 20px;
+                column-rule: 2px solid;
+              }
 ```
+#### flex
+```
+
+```
+
 # JS
 ### 미정의 값 체크 : Nullish coalescing operator - ??
 ```
