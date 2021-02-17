@@ -1,19 +1,19 @@
 # frontend
 
-# CSS 
-### 초기화
+## CSS 
+#### 초기화
 ```
 초기화 참조 : https://www.jsdelivr.com/package/npm/reset-css
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
 ```    
-### css Basic Selector
+#### css Basic Selector
 ```
 > - 자식 : ul > li
 + - 형제 인접 1개 : ul + ol
 ~ - 형제 : ul ~ ol
 space - 자손 : ul li
 ```    
-### css Pseudo-Elements Selector  
+#### css Pseudo-Elements Selector  
 ```
 E:hover - mouse over : a:hover
 E:active - mouse click : a:active
@@ -25,25 +25,25 @@ E:nth-of-type(n) - 동일 E(태그) 형제중 n번째 : .fruits p:nth-of-type(1)
 E:not(S) - E태그중 S(selector)만 제외 : .fruits li:not(.red)
 E::before, ::after - E요소 앞 또는 뒤에 content 삽입(content 속성 필수) : ul li::before{ content: "prefix"; font-weight: bold; color: red;}
 ```    
-### Attribute Selector
+#### Attribute Selector
 ```
 [attr], [attr=value] : [class], [disabled], [type=password] or [type="password"]
 [attr^=value], [sttr$=value] : [class^="btn-"] or [class^=btn-], [class$=success]
 ```    
-### Inheritance : 문자를 다루는 속성이 대체로 상속
+#### Inheritance : 문자를 다루는 속성이 대체로 상속
 ```
 font - font-size, font-weight, font-style, line-height, font-family
 color, text-align, text-indent, text-decoration, letter-spacing, opacity
 강제 상속 : inherit
 ```    
-### Style 우선 순위 : !important > 인라인 style > 아이디 > 클래스[:] > 태그[::]
+#### Style 우선 순위 : !important > 인라인 style > 아이디 > 클래스[:] > 태그[::]
 ```
 1. 명시도 : 점수가 높은 선언 우선 - !important > 인라인 style > 아이디 선택자 > 클래스(:) 선택자 > 태그(::) 선택자 > 전체선택자 > 상속
 2. 선언순서 : 점수가 같은 경우 마지막 선언 override
 3. 중요도 : 상속 보다 우선 - override
 4. !important 적용 최우선
 ```
-### CSS / 단위
+#### CSS / 단위
 ```
 * em : font-size 해당 폰트의 대문자 M기준
     .container{
@@ -64,7 +64,7 @@ color, text-align, text-indent, text-decoration, letter-spacing, opacity
           height: 100vh / 75vh ...,        50vmin
         }
 ```
-### CSS - 속성
+#### CSS - 속성
 ```
 + box-sizing : border-box - padding + border 포함 크기 계산
               content-box : width / height 만으로 크기 계산
@@ -152,8 +152,8 @@ color, text-align, text-indent, text-decoration, letter-spacing, opacity
 
 ```
 
-# JS
-### 미정의 값 체크 : Nullish coalescing operator - ??
+## JS
+#### 미정의 값 체크 : Nullish coalescing operator - ??
 ```
 + null, undefinded, NaN, '', 0  : false
 + {}, [] : true
@@ -163,7 +163,7 @@ color, text-align, text-indent, text-decoration, letter-spacing, opacity
   + 앞이 거짓인 경우 실행 : xx || 실행문
   + 앞이 참인 경우 실행 : xx && 실행문
 ```
-### ES6 추가( ~ 2015)
+#### ES6 추가( ~ 2015)
 ```
 * template string
   ss + ' Lee' === \`${ss} Lee\`
@@ -219,7 +219,7 @@ color, text-align, text-indent, text-decoration, letter-spacing, opacity
 * Template Literals
     + `Today weather is ${weather} and temparature is ${temparature}.`
 ```    
-### ES11(2020)  
+#### ES11(2020)  
 ```
 * Optional chaining
     + console.log(person.job?.manager?.name);
@@ -250,7 +250,7 @@ color, text-align, text-indent, text-decoration, letter-spacing, opacity
     const userName = name ?? 'Guest';       // name || 'Guest' --> 'Guest'
     const message = num ?? 'undefined';     // num || 'undefined' --> 'undefined'
 ```    
-### Promise
+#### Promise
 ```
 function p() {
     return new Promise(/* exceutor*/(resolve, reject) => {
@@ -272,7 +272,7 @@ Promise.reject(/*value*/).catch()...
 Promise.all([Promise Object]).then()...
 Promise.race([Promise Object]).then()...
 ```    
-### async - await
+#### async - await
 ```
 // async가 추가된 메소드는 Promise.resolve() 형태로 return
 async function pp(ms) {
@@ -302,7 +302,7 @@ async function aa(){
     }
 };    
 ```    
-### Deep Copy : 배열([]) 도 동일
+#### Deep Copy : 배열([]) 도 동일
 ```
 // 1 Depth
 let a = { name:"name1", value:"value1"};  // []
