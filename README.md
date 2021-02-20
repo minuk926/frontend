@@ -187,9 +187,25 @@ Container : display: grid;  inline-grid;
                                        grid-template-rows: 1행크기 2행크기...;
                                        grid-template-rows: [선이름] 1행크기 [선이름] 2행크기 [선이름] ...;
                                      }
-
-items : grid-row
-        grid-column
+            grid-template-areas : .container{
+                                    display: grid;
+                                    grid-template-rows: repeat(2, 100px);
+                                    grid-template-columns: repeat(3, 1fr);
+                                    grid-template-areas:
+                                      "header header header"
+                                      "main main aside"
+                                      ". footer footer";  /* grid를 비우고 싶으면 . 입력 */
+                                  }
+                                  header{grid-area: header;}
+                                  main{grid-area: main;}
+                                  aside{grid-area: aside;}
+                                  footer{grid-area: footer;}
+            row-gap / column-gap / gap : grid 간격   gap: row-gap column-gap;   
+            grid-auto-rows / grid-auto-columns : 암시적 행 / 열의 크기 지정
+            grid-auto-flow : 배치하지 않은 아이템의 배치 방식 지정
+                             row / column / row dense / column dense - dense(빈영역 채움)
+items : grid-row: 1 / 2
+        grid-column: 1 / 3
 ```
 
 ## JS
