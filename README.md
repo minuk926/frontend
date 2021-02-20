@@ -147,9 +147,49 @@ color, text-align, text-indent, text-decoration, letter-spacing, opacity
                 column-rule: 2px solid;
               }
 ```
-#### flex
+#### flex : container / items
 ```
+container : flex가 부여된 요소
+            display: flex; - block 요소 처럼 상하로 전개  /   inline-flex; - inline 요소처럼 수평으로 전개
+            flex-flow: row nowrap; - 주축 여러줄묶음;   수평[row, row-reverse] / 수직[column, column-reverse]
+            flex-wra: nowrap, wrap, wrap-reverse
+            justify-content: 주축의 정렬 방법 설정 
+                             flex-start, flex-end, center, space-between, space-around
+            align-content: 교차축의 정렬 방법 설정 - flex-wrap속성을 통해 items가 여러줄(2줄이상)이고 여백이 있는 경우만 사용 가능
+                           stretch, flex-start, flex-end, center, space-between, space-around
+            align-items: 교차축의 items 정렬 방법 설정(items가 한 줄일 경우 많이 사용)
+                         align-content 속성이 우선 - align-items를 사용하려면 align-content: stretch 로 설정해야 함
+                         stretch, flex-start, flex-end, center, baseline(문자열기준 정렬)
+items : order / flex(flex-glow, flex-shrink, flex-basis) / align-self
+        order: 순서;  - 앞으로, + 뒤로
+        flex-grow: 숫자;  item의 증가 너비 비율을 설정, item이 가변 너비가 아니거나 값이 0인 경우는 미 적용됨 
+                   item이 3개이고 flex-grow가 1, 2, 1 이면 25 : 50 : 25의 비율의 너비를 가지게 된다
+        flex-shrink: 감소너비;  item이 감소하는 너비의 비율 설정  클수록 많이 감소(flex-glow와 동일 형태)   
+        flex-basis: 기본너비; item의 공간 배분전 기본 너비 설정 - auto인 경우 width / height로 너비 설정  but 단위값이 부여되면 width/height 설정 불가 
+                    flex-basis: 0, flex-glow: 1 --> glow 값 온전히 적용
+                    flex-basis: 100px; --> 기본값 유지  여분의 값에 대해 glow 적용
+        flex : flex-grow flex-shrink flex-basis;  증가너비  감소너비  기본너비    
+               flex: 1, 1, 20px,  flex: 1 1; - 1,1,0  flex: 1 20px; - 1,1, 20px
+                     flex-basis 값이 생략되면 auto가 아닌 0이 적용
+        align-self : 교차축에서 개별 item의 정렬 방법을 설정,  align-items는 Container 내 모든 items의 정렬 방법을 설정
+                     필요에 의해 일부 item만 정렬 방법을 변경 할 경우 align-self 사용 --> align-items 속성보다 우선
+                     auto(container의 align-items 속성을 상속 받음) / stretch / flex-start / flex-end / center / baseline
+```
+#### Grid : Container / items
+```
+Container : display: grid;  inline-grid;
+            grid-template-rows : 행의 크기 정의                    
+            grid-template-columns : 열의 크기 정의 
+                                     fr(fraction 비율) -   1fr 1fr -->  1 : 1
+                                     repeat - repeat(3, 1fr)
+                                     .container{
+                                       display: grid;
+                                       grid-template-rows: 1행크기 2행크기...;
+                                       grid-template-rows: [선이름] 1행크기 [선이름] 2행크기 [선이름] ...;
+                                     }
 
+items : grid-row
+        grid-column
 ```
 
 ## JS
