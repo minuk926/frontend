@@ -229,11 +229,36 @@ items : grid-row: 1 / 2;    (grid-row-start / grid-row-end)        -->  span 2;
         z-index : 아이템이 쌓이는 순서 지정
         repeat, minmax, fit-content, fr(fractional unit), min-content, max-content, auto-fill, auto-fit
 ```
-## SASS(Syntactically Awesome Style Sheets) - SCSS가 SASS의 상위 버전
+## SCSS - SASS(Syntactically Awesome Style Sheets)의 상위 버전
 ```
 * SCSS / SASS 차이 : {}와 ; 사용 유무(SASS는 사용 안함)
-                     믹스인(Mixins) 생성 방법 : 생성 - SCSS : @mixin  사용 - @include
+                    믹스인(Mixins) 생성 방법 : 생성 - SCSS : @mixin  사용 - @include
                                                      SASS : =      사용 - + 
+* compile : SassMeister(https://www.sassmeister.com/)  
+            Parcel - node 환경  
+* Syntex
+  comment - /* */   
+            // : 컴파일시 미 반영
+  변수 - $   
+  전역변수 - !global   ( $color: #111 !global; ) 
+  중첩 : & - 상위 선택자 참조   
+         @at-root - 중첩안에서 생성하지만 root 범위에서 사용 가능
+         : - 중첩된 속성 정의 ( font-, margin-등)
+         .section{
+             $w: 100px !global;
+             $h: 100px;
+             &:last-child{
+               color: red;
+             }
+             @at-root .box{
+                 width: $w;
+                 height: $h;
+             }
+             font: {
+                 weight: bold;
+                 size: 10px;
+             }    
+         }    
 ```
 
 
