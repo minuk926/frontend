@@ -178,6 +178,13 @@ items : order / flex(flex-glow, flex-shrink, flex-basis) / align-self
 #### Grid : Container / items
 ```
 Container : display: grid;  inline-grid;
+            grid: grid-template-xxx와 grid-auto-xxx의 단축 속성
+                  grid: grid-template
+                        grid-template-rows / grid-auto-flow grid-template-columns;
+                        grid-auto-flow grid-auto-rows / grid-template-columns;
+                        
+            grid-template: grid-template-rows / grid-template-columns;
+                           grid-template-areas;
             grid-template-rows : 행의 크기 정의                    
             grid-template-columns : 열의 크기 정의 
                                      fr(fraction 비율) -   1fr 1fr -->  1 : 1
@@ -204,9 +211,31 @@ Container : display: grid;  inline-grid;
             grid-auto-rows / grid-auto-columns : 암시적 행 / 열의 크기 지정
             grid-auto-flow : 배치하지 않은 아이템의 배치 방식 지정
                              row / column / row dense / column dense - dense(빈영역 채움)
-items : grid-row: 1 / 2
-        grid-column: 1 / 3
+            align-content, justify-content: 수직/수평 축 정렬
+                           normal(stretch), start, end, center, space-around, space-between, space-evenly(여백고르게), stretch
+            align-items, justify-items: 수직/수평 정렬    
+                                        normal(stretch), start, end, center, stretch
+             
+items : grid-row: 1 / 2;    (grid-row-start / grid-row-end)        -->  span 2;
+                  grid-row-start: 1;  grid-row-end: 2;  
+        grid-column: 1 / 3;  (grid-column-start / grid-column-end) -->  span 3;
+                     grid-column-start: 1;  grid-column-end: 3;
+        grid-area: 시작 / 시작 / 끝 / 끝;  (grid-row-start / grid-column-start / grid-row-end / grid-column-end)
+                   영역이름;
+                   grid-area: 2 / span 2 / 3 / -1;     -->  grid-row: 2 / 3;   grid-column: span 2 / -1;
+        align-self, justify-self : 각각의 아이템의 수직/수평 정렬
+                                   normal(stretch), start, end, center, stretch
+        order : 그리드 아이템 배치순서 지정
+        z-index : 아이템이 쌓이는 순서 지정
+        repeat, minmax, fit-content, fr(fractional unit), min-content, max-content, auto-fill, auto-fit
 ```
+## SASS(Syntactically Awesome Style Sheets) - SCSS가 SASS의 상위 버전
+```
+* SCSS / SASS 차이 : {}와 ; 사용 유무(SASS는 사용 안함)
+                     믹스인(Mixins) 생성 방법 : 생성 - SCSS : @mixin  사용 - @include
+                                                     SASS : =      사용 - + 
+```
+
 
 ## JS
 #### 미정의 값 체크 : Nullish coalescing operator - ??
