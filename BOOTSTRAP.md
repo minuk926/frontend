@@ -2,7 +2,18 @@ https://www.bootstrapcdn.com/
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" crossorigin="anonymous">
 
-#### Button
+##### Layout
+```
+* 12 Grid
+* Extra small       : <576px,   max-width none    col-
+  Small             : >=576px   max-width 540px   col-sm-
+  Medium            : >=768px   max-width 720px   col-md-
+  Large             : >=992px   max-width 960px   col-lg-
+  Extra large       : >=1200px  max-width 1140px  col-xl-
+  Extra extra large : >=1400px  max-width 1320px  col-xxl- 
+```
+
+##### Button
 ```html
 <div class="container" style="padding:50px">
     <a href="" class="btn btn-default">default</a>
