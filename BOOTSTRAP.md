@@ -24,3 +24,22 @@ https://www.bootstrapcdn.com/
     <a href="" class="btn btn-danger">danger</a>
 </div>
 ```
+#### Table
+```html
+<div class="container">
+  <table class="table table-bordered table-hover"> 
+    <tr>
+      <th>제목</th>
+      <th>작성일</th>
+      <th>삭제</th>
+    </tr>
+    <tr>
+      <td>Hello world</td>
+      <td>2019-03-25</td>
+      <td>
+        <a href="#" class="btn btn-danger">삭제</a>
+          </td>
+    </tr>
+  </table>
+</div>
+```
