@@ -43,3 +43,16 @@ https://www.bootstrapcdn.com/
   </table>
 </div>
 ```
+#### Card (Panel)
+```html
+<div class="card">
+  <div class="card-heading">
+    <h3 class="card-title">Card title</h3>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+  </div>
+  <div class="card-body">
+    Card content
+  </div>
+  <div class="card-footer">Card footer</div>
+</div>
+```
