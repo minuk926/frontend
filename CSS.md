@@ -192,7 +192,7 @@ align-self : 교차축에서 개별 item의 정렬 방법을 설정,  align-item
              필요에 의해 일부 item만 정렬 방법을 변경 할 경우 align-self 사용 --> align-items 속성보다 우선  
              auto(container의 align-items 속성을 상속 받음) / stretch / flex-start / flex-end / center / baseline  
 ```             
-### Grid : Container / items  
+### Grid : container / items  
 __Container__ 
 ```
 display: grid;  inline-grid;  
