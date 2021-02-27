@@ -69,9 +69,9 @@ __vmax / vmin__ : 현재의 가로/세로 크기중 큰/작은 쪽의 크기에�
             table, table-cell, flex...              
 + __overflow__ : 자식요소의 넘친 부분의 표시에 따라 visible / hidden / scroll(강제 생성) / auto(필요시 생성)  
 + __opacity__ : 투명도 0 ~ 1  
-+ __font__ : font-style - 기울기  font-weight - 두께  font-size - 크기(default 16px) / line-height - 줄높이(줄간격)  font-family - 서체  
-         font: italic bold 20px / 1.5 "Arial", sans-serif;   font size와 font family 필수  
-               20px / 1.5 sans-serif;     bold 20px sans-serif;    italic 20px / 1.5 sans-serif  
++ __font__ : font-style - 기울기 font-weight - 두께 font-size - 크기(default 16px) / line-height - 줄높이(줄간격) font-family - 서체  
+         font: italic bold 20px / 1.5 "Arial", sans-serif; font size와 font family 필수  
+               20px / 1.5 sans-serif; bold 20px sans-serif; italic 20px / 1.5 sans-serif  
          + font-style : bold / italic / oblique  
          + font-weight : nomal(400) / bold(700) / bolder(부모요소보다 두껍게) / lighter(부모요소보다 얇게) / 100 ~ 900 100단위  
                      Thin-100, Extra Light-200, Light-300, Normal-400, Medium-500, Semi Bold-600, Bold-700, Extra Bold-800, Black(Heavy)-900  
