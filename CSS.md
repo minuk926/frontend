@@ -4,62 +4,61 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
 ```    
 #### css Basic Selector
-```
-> - 자식 : ul > li
-+ - 형제 인접 1개 : ul + ol
-~ - 형제 : ul ~ ol
-space - 자손 : ul li
-```    
+__>__ - 자식 : ul > li  
+__+__ - 형제 인접 1개 : ul + ol  
+__~__ - 형제 : ul ~ ol  
+__space__ - 자손 : ul li  
+    
 #### css Pseudo-Elements Selector  
-```
-E:hover - mouse over : a:hover
-E:active - mouse click : a:active
-E:focus - 대화형콘텐츠만 : input:focus
-:first-child, last-child : .fruits li:first-child, li:last-child   :first-child, :last-child
-:nth-child(n) - n번째 선택 : .fruits li:nth-child(2)
-:nth-child(2n), nth-child(n+3) - 2*n2번째, 3+n 부터~ : .fruits li:nth-child(2n), li:nth-child(n+3)
-E:nth-of-type(n) - 동일 E(태그) 형제중 n번째 : .fruits p:nth-of-type(1)
-E:not(S) - E태그중 S(selector)만 제외 : .fruits li:not(.red)
-E::before, ::after - E요소 앞 또는 뒤에 content 삽입(content 속성 필수) : ul li::before{ content: "prefix"; font-weight: bold; color: red;}
-```    
+__E:hover__ - mouse over : a:hover  
+__E:active__ - mouse click : a:active  
+__E:focus__ - 대화형콘텐츠만 : input:focus  
+__:first-child, last-child__ : .fruits li:first-child, li:last-child   :first-child, :last-child  
+__:nth-child(n)__ - n번째 선택 : .fruits li:nth-child(2)  
+__:nth-child(2n), nth-child(n+3)__ - 2*n2번째, 3+n 부터~ : .fruits li:nth-child(2n), li:nth-child(n+3)  
+__E:nth-of-type(n)__ - 동일 E(태그) 형제중 n번째 : .fruits p:nth-of-type(1)  
+__E:not(S)__ - E태그중 S(selector)만 제외 : .fruits li:not(.red)  
+__E::before, ::after__ - E요소 앞 또는 뒤에 content 삽입(content 속성 필수) : ul li::before{ content: "prefix"; font-weight: bold; color: red;}  
+    
 #### Attribute Selector
-```
-[attr], [attr=value] : [class], [disabled], [type=password] or [type="password"]
-[attr^=value], [sttr$=value] : [class^="btn-"] or [class^=btn-], [class$=success]
-```    
+__[attr], [attr=value]__ : [class], [disabled], [type=password] or [type="password"]  
+__[attr^=value], [sttr$=value]__ : [class^="btn-"] or [class^=btn-], [class$=success]  
+
 #### Inheritance : 문자를 다루는 속성이 대체로 상속
-```
-font - font-size, font-weight, font-style, line-height, font-family
-color, text-align, text-indent, text-decoration, letter-spacing, opacity
-강제 상속 : inherit
-```    
+__font__ - font-size, font-weight, font-style, line-height, font-family  
+           color, text-align, text-indent, text-decoration, letter-spacing, opacity  
+__강제 상속__ : inherit  
+  
 #### Style 우선 순위 : !important > 인라인 style > 아이디 > 클래스[:] > 태그[::]
-```
-1. 명시도 : 점수가 높은 선언 우선 - !important > 인라인 style > 아이디 선택자 > 클래스(:) 선택자 > 태그(::) 선택자 > 전체선택자 > 상속
-2. 선언순서 : 점수가 같은 경우 마지막 선언 override
-3. 중요도 : 상속 보다 우선 - override
-4. !important 적용 최우선
-```
+1. __명시도__ : 점수가 높은 선언 우선 - !important > 인라인 style > 아이디 선택자 > 클래스(:) 선택자 > 태그(::) 선택자 > 전체선택자 > 상속  
+2. __선언순서__ : 점수가 같은 경우 마지막 선언 override  
+3. __중요도__ : 상속 보다 우선 - override  
+4. __!important__ : 적용 최우선  
+
 #### CSS / 단위
-```
-* em : font-size 해당 폰트의 대문자 M기준
+* __em__ : font-size 해당 폰트의 대문자 M기준
+```css
     .container{
       width: 600px;      /* 60em 과 동일 : 폰트크기가 10px이므로 */
       font-size: 10px;   /* font-size: 2em : 본래 폰트 크기의 2배 */ 
-    }  
-* rem : root의 r을 의미, 즉 html에 지정된 요소에 영향만을 받음
+    } 
+```    
+* __rem__ : root의 r을 의미, 즉 html에 지정된 요소에 영향만을 받음
+```css
     html{ font-size: 10px; }
     --> .child{
           font-size: 2em;
           width: 20rem;    /* html의 폰트 크기 * rem =  10 * 20 의 크기 */
         }
-* 뷰포트 기준 단위 : % 단위 - vw / vh / vmin / vmax
-    + vw / vh : 현재 화면의 가로 / 세로의 비율 적용
-    + vmax / vmin : 현재의 가로/세로 크기중 큰/작은 쪽의 크기에대한 비율로 적용  
-        .container{
-          width: 100vw  / 50vw / 25vw ..., 50vmax
-          height: 100vh / 75vh ...,        50vmin
-        }
+```        
+* __뷰포트 기준 단위__ : % 단위 - vw / vh / vmin / vmax
+__vw / vh__ : 현재 화면의 가로 / 세로의 비율 적용  
+__vmax / vmin__ : 현재의 가로/세로 크기중 큰/작은 쪽의 크기에대한 비율로 적용  
+```css
+    .container{
+      width: 100vw  / 50vw / 25vw ..., 50vmax
+      height: 100vh / 75vh ...,        50vmin
+    }
 ```
 #### CSS - 속성
 ```
