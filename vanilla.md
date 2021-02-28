@@ -1,5 +1,5 @@
 #### 미정의 값 체크 : Nullish coalescing operator - ??
-```
+```js
 + null, undefinded, NaN, '', 0  : false
 + {}, [] : true
 + 실행블록 참 : if(!xx)  
@@ -9,7 +9,7 @@
   + 앞이 참인 경우 실행 : xx && 실행문
 ```
 #### ES6 추가( ~ 2015)
-```
+```js
 * template string
   ss + ' Lee' === \`${ss} Lee\`
 * Symbol : 유니크한 값 생성  
@@ -65,7 +65,7 @@
     + `Today weather is ${weather} and temparature is ${temparature}.`
 ```    
 #### ES11(2020)  
-```
+```js
 * Optional chaining
     + console.log(person.job?.manager?.name);
         const person1 = {
@@ -96,7 +96,7 @@
     const message = num ?? 'undefined';     // num || 'undefined' --> 'undefined'
 ```    
 #### Promise
-```
+```js
 function p() {
     return new Promise(/* exceutor*/(resolve, reject) => {
         setTimeout(() => {
@@ -118,7 +118,7 @@ Promise.all([Promise Object]).then()...
 Promise.race([Promise Object]).then()...
 ```    
 #### async - await
-```
+```js
 // async가 추가된 메소드는 Promise.resolve() 형태로 return
 async function pp(ms) {
     return setTimeout(() => {
@@ -148,7 +148,7 @@ async function aa(){
 };    
 ```    
 #### Deep Copy : 배열([]) 도 동일
-```
+```js
 // 1 Depth
 let a = { name:"name1", value:"value1"};  // []
 // 1. slice - Deep copy
