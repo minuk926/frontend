@@ -57,6 +57,14 @@
 | `\W`     | word 문자 아님               |
 | `\s`     | space 공백                   |
 | `\S`     | space 공백 아님              |
+| `\t`     | tab                         |
+| `\v`     | vertical tab                |
+
+### Flag
+| Flag     | 의미                         |
+| g        | global                       |
+| i        | Ignore case                  |
+| m        | Multi line - 다중라인 검색    |
 
 
 youtube 동영상 ID 획득 : ```(?:https?:\/\/)?(?:www\.)?youtu.be\/([a-zA-Z0-9-]{11}```
