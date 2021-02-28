@@ -10,6 +10,9 @@
 | `[^]`    | 부정 문자셋, 괄호안의 어떤 문가 아닐때 |
 | `(?:)`   | 찾지만 기억하지는 않음                 |
 
+그룹 - /gr(a|e)y|(and)/gm  
+그룹화X - /gr(?:a|e)y|(and)/gm  
+/gr[a|e|f-z]y/gm
 ### Quantifiers
 
 | Chracter    | 뜻                                  |
@@ -21,6 +24,13 @@
 | `{min,}`    | 최소                                |
 | `{min,max}` | 최소, 그리고 최대                   |
 
+/gra?y/gm : gry gray
+/gra*y/gm : gry gray graaay
+/gra+y/gm : gray graaay
+/gra{2}y/gm : graay
+/gra{2,}y/gm : graay graaaay
+/gra{3,4}y/gm : graaay graaaay
+
 ### Boundary-type
 
 | Chracter | 뜻               |
@@ -29,6 +39,10 @@
 | `\B`     | 단어 경계가 아님 |
 | `^`      | 문장의 시작      |
 | `$`      | 문장의 끝        |
+
+/\bYa/gm : Ya~로 시작
+/Ya\b/gm : ~Ya로 종료
+/\BYa/gm : Ya로 시작되지 않는 Ya
 
 ### Character classes
 
@@ -42,3 +56,31 @@
 | `\W`     | word 문자 아님               |
 | `\s`     | space 공백                   |
 | `\S`     | space 공백 아님              |
+
+```
+  
+Hi there, Nice to meet you. And Hello there and hi.
+I love grey(gray) color not a gry, graay and graaay. grdy
+Ya ya YaYaYa Ya
+
+abcdefghijklmnopqrstuvwxyz
+ABSCEFGHIJKLMNOPQRSTUVWZYZ
+1234567890
+
+.[]{}()\^$|?*+
+
+010-898-0893
+010 898 0893
+010.898.893
+010-405-3412
+02-878-8888
+
+dream.coder.ellie@gmail.com
+hello@daum.net
+hello@daum.co.kr
+
+http://www.youtu.be/-ZClicWm0zM
+https://www.youtu.be/-ZClicWm0zM
+https://youtu.be/-ZClicWm0zM
+youtu.be/-ZClicWm0zM
+```
