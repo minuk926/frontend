@@ -62,6 +62,7 @@
 
 ### Flag
 | Flag     | 의미                         |
+| -------- | ---------------------------- |
 | g        | global                       |
 | i        | Ignore case                  |
 | m        | Multi line - 다중라인 검색    |
