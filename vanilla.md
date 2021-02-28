@@ -172,3 +172,38 @@ let a = {
 };
 let scp = JSON.parse(JSON.stringify(a));
 ```   
+#### 배열내장 함수
+```js
+const array = [1, 2, 3, 4, 5, 6, 7, 8];
+let newArr = null;
+forEach : array.forEach(n => {
+            newArr.push(n*n);
+          });
+map : newArr = array.map(n => n*n);
+
+const superheroes = ['아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지'];
+indexOf : const idx = superheroes.indexOf('토르');   // 2
+
+const todos = [
+    {id: 1, text: '자바스크립트 입문', done: true},
+    {id: 2, text: '함수 배우기', done: true},
+    {id: 3, text: '객체와 배열 배우기', done: true},
+    {id: 4, text: '배열 내장함수 배우기', done: false}    
+];
+findIndex : const idx = todos.findIndex(todo => todo.id === 3);  // 2
+find : const todo = dodos.find(todo => todo.id === 3); // {id: 3, text: '객체와 배열 배우기', done: false}
+filter : taskNotDone = todos.filter(todo => !todo.done); // [{id: 4, text: '배열 내장함수 배우기', done: false}]
+splice / slice : 항목제거 / 배열추출(새로운 배열 생성 - 기존 배열 유지)
+    const numbers = [10, 20, 30, 40];
+    const sliced = numbers(0,2);    // [10,20]
+    const idx = numbers.indexOf(30);
+    numbers.splice(idx, 1);  // 30 삭제 - [10,20,40]
+shift(맨앞배열제거), unshift(맨앞배열추가) / pop(맨뒤배열제거) 
+concat-배열을 합친다(기존배열유지) / join
+reduce :  reduce((acc, cur) => acc + cur, 0) - 콜백함수, 함수 초기값
+    let sum = numbers.reduce((acc, cur) => acc + cur, 0);
+    let sum2 = numbers.reduce((acc,cur) => {
+        console.log({ acc, cur });
+        return acc + cur;
+    }, 0);
+```    
