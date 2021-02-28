@@ -1,4 +1,5 @@
-연습용 사이트: [regexr.com/5mhou](https://regexr.com/5ml92)
+연습용 사이트: [regexr.com/5mhou](https://regexr.com/5ml92)  
+테스트 사이트: [regexon.com](https://regexone.com)
 
 ### Groups and ranges
 
@@ -57,8 +58,16 @@
 | `\s`     | space 공백                   |
 | `\S`     | space 공백 아님              |
 
+
+youtube 동영상 ID 획득 : ```(?:https?:\/\/)?(?:www\.)?youtu.be\/([a-zA-Z0-9-]{11}```
+##### 실제 js 에서 사용
+```js
+const regex = /(?:https?:\/\/)?(?:www\.)?youtu.be\/([a-zA-Z0-9-]{11}/;
+const url = 'http://www.youtu.be/-ZClicWm0zM';
+const rslt = url.match(regex);   // 0: 변수값  1: 결과값
 ```
-  
+
+```  
 Hi there, Nice to meet you. And Hello there and hi.
 I love grey(gray) color not a gry, graay and graaay. grdy
 Ya ya YaYaYa Ya
