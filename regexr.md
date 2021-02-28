@@ -24,12 +24,12 @@
 | `{min,}`    | 최소                                |
 | `{min,max}` | 최소, 그리고 최대                   |
 
-/gra?y/gm : gry gray
-/gra*y/gm : gry gray graaay
-/gra+y/gm : gray graaay
-/gra{2}y/gm : graay
-/gra{2,}y/gm : graay graaaay
-/gra{3,4}y/gm : graaay graaaay
+/gra?y/gm : gry gray  
+/gra*y/gm : gry gray graaay  
+/gra+y/gm : gray graaay  
+/gra{2}y/gm : graay  
+/gra{2,}y/gm : graay graaaay  
+/gra{3,4}y/gm : graaay graaaay  
 
 ### Boundary-type
 
