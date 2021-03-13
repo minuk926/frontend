@@ -207,7 +207,7 @@ reduce :  reduce((acc, cur) => acc + cur, 0) - 콜백함수, 함수 초기값
         return acc + cur;
     }, 0);
 ```    
-#### focus cursor 위치 : focus.setCursorPosition(0 ~ )
+#### focus cursor 위치 : $(selector).selectRange(0,0)
 ```js
 jQuery.fn.selectRange = function(start, end) {
     return this.each(function() {
