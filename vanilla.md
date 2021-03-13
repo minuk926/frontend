@@ -209,18 +209,20 @@ reduce :  reduce((acc, cur) => acc + cur, 0) - 콜백함수, 함수 초기값
 ```    
 #### focus cursor 위치 : focus.setCursorPosition(0 ~ )
 ```js
-$.fn.setCursorPosition = function( pos ){
-    this.each( function( index, elem ) {
-	if( elem.setSelectionRange ) {
-	    elem.setSelectionRange(pos, pos);
-	} else if( elem.createTextRange ) {
-	    var range = elem.createTextRange();
+jQuery.fn.selectRange = function(start, end) {
+    return this.each(function() {
+	if(this.setSelectionRange) {
+	    this.focus();
+	    this.setSelectionRange(start, end);
+	} else if(this.createTextRange) {
+	    var range = this.createTextRange();
 	    range.collapse(true);
-	    range.moveEnd('character', pos);
-	    range.moveStart('character', pos);
+	    range.moveEnd('character', end);
+	    range.moveStart('character', start);
 	    range.select();
 	}
     });
-    return this;
 };
+
+$(selector).selectRange(0,0)
 ```
