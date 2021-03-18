@@ -10,10 +10,42 @@
 | `[]`     | 문자셋, 괄호안의 어떤 문자든           |
 | `[^]`    | 부정 문자셋, 괄호안의 어떤 문가 아닐때 |
 | `(?:)`   | 찾지만 기억하지는 않음                 |
+| `(?=)`   | 전방탐색 '=' 다음에 일치할 텍스트 위치  |
+| `(?<=)`   | 후방탐색 '<=' 다음에 일치할 텍스트 위치  |
 
 그룹 - /gr(a|e)y|(and)/gm  
 그룹화X - /gr(?:a|e)y|(and)/gm  
 /gr[a|e|f-z]y/gm
+/^(?=.*[A-Za-z])$/
+```js
+http://www.forta.com
+https://mail.forta.com
+ftp://ftp.forta.com
+.+(?=:) ==> http:
+            https:
+            ftp:
+.+(:) ==>   http
+            https
+            ftp 
+
+ABC01: $23.45
+HGG42: $5.31
+CFMX1: $899.00
+XTC99: $69.96
+Total items found: 4
+(?<=\$)[0-9.]+ ==> 23.45
+                   5.31
+                   899.00
+                   69.96
+
+<HEAD>
+<TITLE>Ben Forta`s Homepage</TITLE>
+</HEAD>
+(?<=\<[tT][iI][tT][lL][eE]\>).*(?=\<\/[tT][iI][tT][lL][eE]\>)  ==> Ben Forta`s Homepage
+
+(?<=\<[tT][iI][tT][lL][eE]\>)는 후방탐색 작업으로 <TITLE>과 일치하며 소비하지 않습니다..   
+(?=\<\/[tT][iI][tT][lL][eE]\>)도 같은 방식으로 </Title>과 일치하며, 소비하지 않습니다. 따라서 제목 텍스트만 반환합니다  
+```
 ### Quantifiers
 
 | Chracter    | 뜻                                  |
